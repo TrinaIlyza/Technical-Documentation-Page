@@ -8,175 +8,164 @@
 </head>
 <body>
   <nav id="navbar">
-    <header class="header">JavaScript Documentation</header>
+    <header class="header">LAN Security Concepts</header>
     <a class="nav-link" href="#Introduction">Introduction</a>
-    <a class="nav-link" href="#What_you_should_already_know">What you should already know</a>
-    <a class="nav-link" href="#JavaScript_and_Java">JavaScript and Java</a>
-    <a class="nav-link" href="#Hello_world">Hello world</a>
-    <a class="nav-link" href="#Variables">Variables</a>
-    <a class="nav-link" href="#Declaring_Variables">Declaring Variables</a>
-    <a class="nav-link" href="#Variable_Scope">Variable Scope</a>
-    <a class="nav-link" href="#Global_Variables">Global Variables</a>
-    <a class="nav-link" href="#Constants">Constants</a>
-    <a class="nav-link" href="#Data_Types">Data Types</a>
-    <a class="nav-link" href="#if...else statement">if...else statement</a>
-    <a class="nav-link" href="#while statement">while statement</a>
-    <a class="nav-link" href="#Function_Declarations">Function Declarations</a>
+    <a class="nav-link" href="#What_will_I_learn_in_this?">What will I learn in this?</a>
+    <a class="nav-link" href="#Endpoint_Security:_Network_Attacks_Today">Endpoint Security: Network Attacks Today</a>
+    <a class="nav-link" href="#Endpoint_Security:_Network_Security_Devices">Endpoint Security: Network Security Devices</a>
+    <a class="nav-link" href="#Endpoint_Security:_Endpoint_Protection">Endpoint Security: Endpoint Protection</a>
+    <a class="nav-link" href="#Access_Control:_Authentication_with_a_Local_Password">Access Control: Authentication with a Local Password</a>
+    <a class="nav-link" href="#Access_Control:_AAA_Components">Access Control: AAA Components</a>
+    <a class="nav-link" href="#Layer_2_Security_Threats">Layer 2 Security Threats</a>
+    <a class="nav-link" href="#MAC_Address_Table_Attack:_MAC_Address_Table_Flooding">MAC Address Table Attack: MAC Address Table Flooding</a>
+    <a class="nav-link" href="#MAC_Address_Table_Attack:_Mitigation">MAC Address Table Attack: Mitigation</a>
+    <a class="nav-link" href="#VLAN_Hopping_Attacks">VLAN Hopping Attacks</a>
+    <a class="nav-link" href="#DHCP_Attacks">DHCP Attacks</a>
+    <a class="nav-link" href="#ARP_Attacks">ARP Attacks</a>
   </nav>
   <main id="main-doc">
     <section class="main-section" id="Introduction">
       <header class="header">Introduction</header>
-      <p>JavaScript is a cross-platform, object-oriented scripting language. It is a small and lightweight language. Inside a host environment (for example, a web browser), JavaScript can be connected to the objects of its environment to provide programmatic control over them.</p>
-      <p>JavaScript contains a standard library of objects, such as Array, Date, and Math, and a core set of language elements such as operators, control structures, and statements. Core JavaScript can be extended for a variety of purposes by supplementing it with additional objects; for example: </p>
+      <p>Welcome to LAN Security Concepts!</p>
+      <p>If your career path is in IT, you won’t just be building or maintaining networks. You will be responsible for the security of your network. For today’s network architects and administrators, security is not an afterthought. It is a top priority for them! In fact, many people in IT now work exclusively in the area of network security.
+
+Do you understand what makes a LAN secure? Do you know what threat actors can do to break network security? Do you know what you can do to stop them? This module is your introduction to the world of network security,</p>
+    </section>
+
+    <section class="main-section" id="What_will_I_learn_in_this?">
+      <header class="header">What will I learn in this?</header>
+      <p>Module Objective: Explain how vulnerabilities compromise LAN security.</p>
       <ul>
-        <li>Client-side JavaScript extends the core language by supplying objects to control a browser and its Document Object Model (DOM). For example, client-side extensions allow an application to place elements on an HTML form and respond to user events such as mouse clicks, form input, and page navigation.</li>
-        <li>Server-side JavaScript extends the core language by supplying objects relevant to running JavaScript on a server. For example, server-side extensions allow an application to communicate with a database, provide continuity of information from one invocation to another of the application, or perform file manipulations on a server.</li>
+        <li>Explain how to use endpoint security to mitigate attacks.</li>
+        <li>Explain how AAA and 802.1X are used to authenticate LAN endpoints and devices.li>
+        <li>Identify Layer 2 vulnerabilities.</li>
+        <li>Explain how a MAC address table attack compromises LAN security.
+</li>
+        <li>Explain how LAN attacks compromise LAN security.</li>
       </ul>
     </section>
 
-    <section class="main-section" id="What_you_should_already_know">
-      <header class="header">What you should already know</header>
-      <p>This guide assumes you have the following basic background:</p>
+    <section class="main-section" id="Endpoint_Security:_Network_Attacks_Today">
+      <header class="header">Endpoint Security: Network Attacks Today</header>
+      <p>The news media commonly covers attacks on enterprise networks. Simply search the internet for “latest network attacks” to find up-to-date information on current attacks. Most likely, these attacks will involve one or more of the following:</p>
       <ul>
-        <li>A general understanding of the Internet and the World Wide Web (WWW).</li>
-        <li>Good working knowledge of HyperText Markup Language (HTML).</li>
-        <li>Some programming experience. If you are new to programming, try one of the tutorials linked on the main page about JavaScript.</li>
+        <li>Distributed Denial of Service (DDoS) – This is a coordinated attack from many devices, called zombies, with the intention of degrading or halting public access to an organization’s website and resources.</li>
+        <li>Data Breach – This is an attack in which an organization’s data servers or hosts are compromised to steal confidential information.</li>
+        <li>Malware – This is an attack in which an organization’s hosts are infected with malicious software that cause a variety of problems. For example, ransomware such as WannaCry, shown in the figure, encrypts the data on a host and locks access to it until a ransom is paid.</li>
       </ul>
     </section>
 
-    <section class="main-section" id="JavaScript_and_Java">
-      <header class="header">JavaScript and Java</header>
-      <p>JavaScript and Java are similar in some ways but fundamentally different in some others. The JavaScript language resembles Java but does not have Java's static typing and strong type checking. JavaScript follows most Java expression syntax, naming conventions and basic control-flow constructs which was the reason why it was renamed from LiveScript to JavaScript.</p>
-      <p>In contrast to Java's compile-time system of classes built by declarations, JavaScript supports a runtime system based on a small number of data types representing numeric, Boolean, and string values. JavaScript has a prototype-based object model instead of the more common class-based object model. The prototype-based model provides dynamic inheritance; that is, what is inherited can vary for individual objects. JavaScript also supports functions without any special declarative requirements. Functions can be properties of objects, executing as loosely typed methods.</p>
-      <p>JavaScript is a very free-form language compared to Java. You do not have to declare all variables, classes, and methods. You do not have to be concerned with whether methods are public, private, or protected, and you do not have to implement interfaces. Variables, parameters, and function return types are not explicitly typed.</p>
-    </section>
-
-    <section class="main-section" id="Hello_world">
-      <header class="header">Hello world</header>
-      <p>To get started with writing JavaScript, open the Scratchpad and write your first "Hello world" JavaScript code:</p>
-      <code>function greetMe(yourName) { alert("Hello " + yourName); }</code>
-      <code>greetMe("World");</code>
-      <p>Select the code in the pad and hit Ctrl+R to watch it unfold in your browser!</p>
-    </section>
-
-    <section class="main-section" id="Variables">
-      <header class="header">Variables</header>
-      <p>You use variables as symbolic names for values in your application. The names of variables, called identifiers, conform to certain rules.</p>
-      <p>A JavaScript identifier must start with a letter, underscore (_), or dollar sign ($); subsequent characters can also be digits (0-9). Because JavaScript is case sensitive, letters include the characters "A" through "Z" (uppercase) and the characters "a" through "z" (lowercase).</p>
-      <p>You can use ISO 8859-1 or Unicode letters such as å and ü in identifiers. You can also use the Unicode escape sequences as characters in identifiers. Some examples of legal names are Number_hits, temp99, and _name.</p>
-    </section>
-
-    <section class="main-section" id="Declaring_Variables">
-      <header class="header">Declaring Variables</header>
-      <p>You can declare a variable in three ways:</p>
-      <p>With the keyword var. For example,</p>
-      <code>var x = 42.</code>
-      <p>This syntax can be used to declare both local and global variables.</p>
-      <p>By simply assigning it a value. For example,</p>
-      <code>x = 42.</code>
-      <p>This always declares a global variable. It generates a strict JavaScript warning. You shouldn't use this variant.</p>
-      <p>With the keyword let. For example,</p>
-      <code>let y = 13.</code>
-      <p>This syntax can be used to declare a block scope local variable. See Variable scope below.</p>
-    </section>
-
-    <section class="main-section" id="Variable_Scope">
-      <header class="header">Variable Scope</header>
-        <p>When you declare a variable outside of any function, it is called a global variable, because it is available to any other code in the current document. When you declare a variable within a function, it is called a local variable, because it is available only within that function.</p>
-      <p>JavaScript before ECMAScript 2015 does not have block statement scope; rather, a variable declared within a block is local to the function (or global scope) that the block resides within. For example, the following code will log 5, because the scope of x is the function (or global context) within which x is declared, not the block, which in this case is an if statement.</p>
-      <code>if (true) { var x = 5; } console.log(x); // 5</code>
-      <p>This behavior changes when using the <code>let</code> declaration introduced in ECMAScript 2015.</p>
-      <code>if (true) { let y = 5; } console.log(y); // ReferenceError: y is not defined</code>
-    </section>
-
-    <section id="Global_Variables" class="main-section">
-      <header class="header">Global Variables</header>
-      <p>Global variables are, in fact, properties of the global object. In web pages, the global object is <code>window</code>, so you can set and access global variables using the <code>window.variable</code> syntax.</p>
-      <p>Consequently, you can access global variables declared in one window or frame from another window or frame by specifying the window or frame name. For example, if a variable called <code>phoneNumber</code> is declared in a document, you can refer to this variable from an iframe as <code>parent.phoneNumber</code>.</p>
-    </section>
-
-    <section id="Constants" class="main-section">
-      <header class="header">Constants</header>
-      <p>You can create a read-only, named constant with the <code>const</code> keyword. The syntax of a constant identifier is the same as for a variable identifier: it must start with a letter, underscore, or dollar sign and can contain alphabetic, numeric, or underscore characters.</p>
-      <code>const PI = 3.14;</code>
-      <p>A constant cannot change value through assignment or be re-declared while the script is running. It has to be initialized to a value.</p>
-      <p>The scope rules for constants are the same as those for <code>let</code> block scope variables. If the <code>const</code> keyword is omitted, the identifier is assumed to represent a variable.</p>
-      <p>You cannot declare a constant with the same name as a function or variable in the same scope.</p>
-      <code>// THIS WILL CAUSE AN ERROR function f() {}; const f = 5; // THIS
-WILL CAUSE AN ERROR ALSO function f() { const g = 5; var g;
-//statements}</code>
-      <p>However, object attributes are not protected, so the following statement is executed without problems.</p>
-      <code>const MY_OBJECT = {"key": "value"}; MY_OBJECT.key = "otherValue";</code>
-    </section>
-
-    <section id="Data_Types" class="main-section">
-      <header class="header">Data Types</header>
-      <p>The latest ECMAScript standard defines seven data types:</p>
+    <section class="main-section" id="Endpoint_Security:_Network_Security_Devices">
+      <header class="header">Endpoint Security: Network Security Devices</header>
+      <p>Various network security devices are required to protect the network perimeter from outside access. These devices could include a virtual private network (VPN) enabled router, a next-generation firewall (NGFW), and a network access control (NAC) device.</p>
       <ul>
-        <li>Boolean: <code>true</code> and <code>false</code>.</li>
-        <li>null: A special keyword denoting a null value. Because JavaScript is case-sensitive, <code>null</code> is not the same as <code>Null</code>, <code>NULL</code>, or any other variant.</li>
-        <li>undefined: A top-level property whose value is undefined.</li>
-        <li>Number: <code>42</code> or <code>3.14159</code>.</li>
-        <li>String: <code>"Howdy"</code></li>
-        <li>Symbol (new in ECMAScript 2015): A data type whose instances are unique and immutable.</li>
-        <li>Object</li>
+        <li>A VPN-enabled router provides a secure connection to remote users across a public network and into the enterprise network. VPN services can be integrated into the firewall.</li>
+        <li>An NGFW provides stateful packet inspection, application visibility and control, a next-generation intrusion prevention system (NGIPS), advanced malware protection (AMP), and URL filtering.</li>
+        <li>A NAC device includes authentication, authorization, and accounting (AAA) services. In larger enterprises, these services might be incorporated into an appliance that can manage access policies across a wide variety of users and device types. The Cisco Identity Services Engine (ISE) is an example of a NAC device.</li>
       </ul>
-      <p>Although these data types are a relatively small amount, they enable you to perform useful functions with your applications. Objects and functions are the other fundamental elements in the language. You can think of objects as named containers for values, and functions as procedures that your application can perform.</p>
     </section>
 
-    <section id="if...else statement" class="main-section">
-      <header class="header">if...else statement</header>
-      <p>Use the <code>if</code> statement to execute a statement if a logical condition is true. Use the optional <code>else</code> clause to execute a statement if the condition is false. An <code>if</code> statement looks as follows:</p>
-      <code>if (condition) { statement_1; } else { statement_2; }</code>
-      <p>Condition can be any expression that evaluates to true or false. If condition evaluates to true, statement_1 is executed; otherwise, statement_2 is executed. <code>statement_1</code> and <code>statement_2</code> can be any statement, including further nested <code>if</code> statements.</p>
-      <p>You may also compound the statements using else if to have multiple conditions tested in sequence, as follows:</p>
-      <code> if (condition_1) { statement_1; } else if(condition_2) {statement_2;} else if (condition_n) { statement_n; } else {statement_last; }</code>
-      <p> In the case of multiple conditions only the first logical condition which evaluates to true will be executed. To execute multiple statements, group them within a block statement ({ ... }) . In general, it's good practice to always use block statements, especially when nesting if statements:</p>
-        <code>if (condition) {         statement_1_runs_if_condition_is_true;
-  statement_2_runs_if_condition_is_true; } else {
-  statement_3_runs_if_condition_is_false;
-  statement_4_runs_if_condition_is_false; }
-</code>
-      <p>It is advisable to not use simple assignments in a conditional expression, because the assignment can be confused with equality when glancing over the code. For example, do not use the following code:</p>
-      <code>if (x = y) { /* statements here */ }</code>
-      <p>If you need to use an assignment in a conditional expression, a common practice is to put additional parentheses around the assignment. For example:</p>
-      <code>if ((x = y)) { /* statements here */ }</code>
+    <section class="main-section" id="Endpoint_Security:_Endpoint_Protection">
+      <header class="header">Endpoint Security: Endpoint Protection</header>
+      <p>LAN devices such as switches, wireless LAN controllers (WLCs), and other access point (AP) devices interconnect endpoints. Most of these devices are susceptible to the LAN-related attacks that are covered in this module.</p>
+      <p>But many attacks can also originate from inside the network. If an internal host is infiltrated, it can become a starting point for a threat actor to gain access to critical system devices, such as servers and sensitive data.</p>
+      <p>Endpoints are hosts which commonly consist of laptops, desktops, servers, and IP phones, as well as employee-owned devices that are typically referred to as bring your own devices (BYODs). Endpoints are particularly susceptible to malware-related attacks that originate through email or web browsing. These endpoints have typically used traditional host-based security features, such as antivirus/antimalware, host-based firewalls, and host-based intrusion prevention systems (HIPSs). However, today endpoints are best protected by a combination of NAC, host-based AMP software, an email security appliance (ESA), and a web security appliance (WSA). Advanced Malware Protection (AMP) products include endpoint solutions such as Cisco AMP for Endpoints.</p>
     </section>
 
-    <section id="while statement" class="main-section">
-      <header class="header">while statement</header>
-      <p>A <code>while</code> statement executes its statements as long as a specified condition evaluates to true. A <code>while</code> statement looks as follows:</p>
-      <code>while (condition) statement</code>
-      <p>If the condition becomes false, the statement within the loop stops executing, and control passes to the statement following the loop.</p>
-      <p>The condition test occurs before statement in the loop is executed. If the condition returns true, statement is executed and the condition is tested again. If the condition returns false, execution stops and control is passed to the statement following while.</p>
-      <p>To execute multiple statements, use a block statement ({ ... }) to group those statements.</p>
-      <p>Example:</p>
-      <p>The following while loop iterates as long as n is less than three:</p>
-      <code>var n = 0; var x = 0; while (n < 3) { n++; x += n; }
-      </code>
-      <p>With each iteration, the loop increments n and adds that value to x. Therefore, x and n take on the following values:</p>
+    <section class="main-section" id="Access_Control:_Authentication_with_a_Local_Password">
+      <header class="header">Access Control: Authentication with a Local Password</header>
+      <p>In the previous topic, you learned that a NAC device provides AAA services. In this topic, you will learn more about AAA and the ways to control access.</p>
+      <p>Many types of authentication can be performed on networking devices, and each method offers varying levels of security. The simplest method of remote access authentication is to configure a login and password combination on console, vty lines, and aux ports, as shown in the vty lines in the following example. This method is the easiest to implement, but it is also the weakest and least secure. This method provides no accountability and the password is sent in plaintext. Anyone with the password can gain entry to the device.</p>
+      <code>R1(config)# line vty 0 4
+R1(config-line)# password ci5c0
+R1(config-line)# login</code>
+      <p>SSH is a more secure form of remote access:</p>
       <ul>
-        <li>After the first pass: n = 1 and x = 1</li>
-        <li>After the second pass: n = 2 and x = 3</li>
-        <li>After the third pass: n = 3 and x = 6</li>
+        <li>It requires a username and a password, both of which are encrypted during transmission.</li>
+        <li>The username and password can be authenticated by the local database method.</li>
+        <li>It provides more accountability because the username is recorded when a user logs in.</li>
+     </ul>
+      <p>The following example illustrates SSH and local database methods of remote access.</p>
+      <code>R1(config)# ip domain-name example.com
+R1(config)# crypto key generate rsa general-keys modulus 2048
+R1(config)# username Admin secret Str0ng3rPa55w0rd</code>
+<code>R1(config)# ip ssh version 2
+R1(config)# line vty 0 4
+R1(config-line)# transport input ssh
+R1(config-line)# login local</code>
+      <p>The local database method has some limitations:</p>
+      <ul>
+        <li>User accounts must be configured locally on each device. In a large enterprise environment with multiple routers and switches to manage, it can take time to implement and change local databases on each device.</li>
+        <li>The local database configuration provides no fallback authentication method. For example, what if the administrator forgets the username and password for that device? With no backup method available for authentication, password recovery becomes the only option.</li>
       </ul>
-      <p>After completing the third pass, the condition n < 3 is no longer true, so the loop terminates.</p>
+      <p>A better solution is to have all devices refer to the same database of usernames and passwords from a central server.</p>
     </section>
 
-    <section id="Function_Declarations" class="main-section">
-      <header class="header">Function Declarations</header>
-      <p>A function definition (also called a function declaration or function statement) consists of the <code>function</code> keyword, followed by:</p>
+    <section class="main-section" id="Access_Control:_AAA_Components">
+      <header class="header">Access Control: AAA Components</header>
+        <p>AAA stands for Authentication, Authorization, and Accounting. The AAA concept is similar to using a credit card, as shown in the figure. The credit card identifies who can use it, how much that user can spend, and keeps an account of what items or services the user purchased.</p>
+      <p>AAA provides the primary framework to set up access control on a network device. AAA is a way to control who is permitted to access a network (authenticate), what they can do while they are there (authorize), and to audit what actions they performed while accessing the network (accounting).</p>
+    </section>
+
+    <section id="Layer_2_Security_Threats" class="main-section">
+      <header class="header">Layer 2 Security Threats</header>
+      <p>The previous two topics discussed securing endpoints. In this topic, you will continue to learn about ways to secure the LAN by focusing on the frames found in the data link layer (Layer 2) and the switch.</p>
+      <p>Recall that the OSI reference model is divided into seven layers which work independently of each other. The figure shows the function of each layer and the core elements that can be exploited.</p>
+      <p>Network administrators routinely implement security solutions to protect the elements in Layer 3 up through Layer 7. They use VPNs, firewalls, and IPS devices to protect these elements. However, if Layer 2 is compromised, then all the layers above it are also affected. For example, if a threat actor with access to the internal network captured Layer 2 frames, then all the security implemented on the layers above would be useless. The threat actor could cause a lot of damage on the Layer 2 LAN networking infrastructure.</p>   
+    </section>
+
+    <section id="MAC_Address_Table_Attack:_MAC_Address_Table_Flooding" class="main-section">
+      <header class="header">MAC Address Table Attack: MAC Address Table Flooding</header>
+      <p>All MAC tables have a fixed size and consequently, a switch can run out of resources in which to store MAC addresses. MAC address flooding attacks take advantage of this limitation by bombarding the switch with fake source MAC addresses until the switch MAC address table is full.</p>
+      <p>When this occurs, the switch treats the frame as an unknown unicast and begins to flood all incoming traffic out all ports on the same VLAN without referencing the MAC table. This condition now allows a threat actor to capture all of the frames sent from one host to another on the local LAN or local VLAN.</p>
+      <p>Note: Traffic is flooded only within the local LAN or VLAN. The threat actor can only capture traffic within the local LAN or VLAN to which the threat actor is connected.</p>
+      <p>If the threat actor stops macof from running or is discovered and stopped, the switch eventually ages out the older MAC address entries from the table and begins to act like a switch again.</p>
+    </section>
+
+    <section id="MAC_Address_Table_Attack:_Mitigation" class="main-section">
+      <header class="header">MAC Address Table Attack: Mitigation</header>
+      <p>What makes tools such as macof so dangerous is that an attacker can create a MAC table overflow attack very quickly. For instance, a Catalyst 6500 switch can store 132,000 MAC addresses in its MAC address table. A tool such as macof can flood a switch with up to 8,000 bogus frames per second; creating a MAC address table overflow attack in a matter of a few seconds. The example shows a sample output of the macof command on a Linux host.</p>
+      <code># macof -i eth1
+36:a1:48:63:81:70 15:26:8d:4d:28:f8 0.0.0.0.26413 > 0.0.0.0.49492: S 1094191437:1094191437(0) win 512 
+16:e8:8:0:4d:9c da:4d:bc:7c:ef:be 0.0.0.0.61376 > 0.0.0.0.47523: S 446486755:446486755(0) win 512 </code>
+<code>18:2a:de:56:38:71 33:af:9b:5:a6:97 0.0.0.0.20086 > 0.0.0.0.6728: S 105051945:105051945(0) win 512 
+e7:5c:97:42:ec:1 83:73:1a:32:20:93 0.0.0.0.45282 > 0.0.0.0.24898: S 1838062028:1838062028(0) win 512 
+62:69:d3:1c:79:ef 80:13:35:4:cb:d0 0.0.0.0.11587 > 0.0.0.0.7723: S 1792413296:1792413296(0) win 512 
+c5:a:b7:3e:3c:7a 3a:ee:c0:23:4a:fe 0.0.0.0.19784 > 0.0.0.0.57433: S 1018924173:1018924173(0) win 512 
+88:43:ee:51:c7:68 b4:8d:ec:3e:14:bb 0.0.0.0.283 > 0.0.0.0.11466: S 727776406:727776406(0) win 512 
+b8:7a:7a:2d:2c:ae c2:fa:2d:7d:e7:bf 0.0.0.0.32650 > 0.0.0.0.11324: S 605528173:605528173(0) win 512 
+e0:d8:1e:74:1:e 57:98:b6:5a:fa:de 0.0.0.0.36346 > 0.0.0.0.55700: S 2128143986:2128143986(0) win 512</code>
+      <p>Another reason why these attack tools are dangerous is because they not only affect the local switch, they can also affect other connected Layer 2 switches. When the MAC address table of a switch is full, it starts flooding out all ports including those connected to other Layer 2 switches.</p>
+      <p>To mitigate MAC address table overflow attacks, network administrators must implement port security. Port security will only allow a specified number of source MAC addresses to be learned on the port. Port security is further discussed in another module.</p>
+    </section>
+
+    <section id="VLAN_Hopping_Attacks" class="main-section">
+      <header class="header">VLAN Hopping Attacks</header>
+      <p>A VLAN hopping attack enables traffic from one VLAN to be seen by another VLAN without the aid of a router. In a basic VLAN hopping attack, the threat actor configures a host to act like a switch to take advantage of the automatic trunking port feature enabled by default on most switch ports.</p>
+      <p>The threat actor configures the host to spoof 802.1Q signaling and Cisco-proprietary Dynamic Trunking Protocol (DTP) signaling to trunk with the connecting switch. If successful, the switch establishes a trunk link with the host, as shown in the figure. Now the threat actor can access all the VLANs on the switch. The threat actor can send and receive traffic on any VLAN, effectively hopping between VLANs.</p>
+
+      <p>An attacker is connected to a switch which is connected to another switch via an 802.1Q trunk. The second switch has a connection to Server 1 on V LAN 10 and a connection to Server 2 at V LAN 20. The attacker established an unauthorized 802.1Q trunk link to the switch to gain access to the server V LAN. an arrow points from the attacker to the switch and is labeled unauthorized trunk.</p>
+    </section>
+
+    <section id="DHCP_Attacks" class="main-section">
+      <header class="header">DHCP Attacks</header>
+      <p>Two types of DHCP attacks are DHCP starvation and DHCP spoofing. Both attacks are mitigated by implementing DHCP snooping.</p>
+      <p>DHCP Starvation Attack - The goal of the DHCP Starvation attack is to create a DoS for connecting clients. DHCP starvation attacks require an attack tool such as Gobbler.</p>
+      <p>Gobbler has the ability to look at the entire scope of leasable IP addresses and tries to lease them all. Specifically, it creates DHCP discovery messages with bogus MAC addresses.</p>
+      <p>TDHCP Spoofing Attack - A DHCP spoofing attack occurs when a rogue DHCP server is connected to the network and provides false IP configuration parameters to legitimate clients. A rogue server can provide a variety of misleading information:</p>
       <ul>
-        <li>The name of the function.</li>
-        <li>A list of arguments to the function, enclosed in parentheses and separated by commas.</li>
-        <li>The JavaScript statements that define the function, enclosed in curly brackets, { }.</li>   
+        <li>Wrong default gateway - The rogue server provides an invalid gateway or the IP address of its host to create a man-in-the-middle attack. This may go entirely undetected as the intruder intercepts the data flow through the network.</li>
+        <li>Wrong DNS server - The rogue server provides an incorrect DNS server address pointing the user to a nefarious website.</li>
+        <li>Wrong IP address - The rogue server provides an invalid IP address effectively creating a DoS attack on the DHCP client.</li>
       </ul>
-      <p>For example, the following code defines a simple function named square:</p>
-      <code>function square(number) { return number * number; }
-</code>
-      <p>The function square takes one argument, called number. The function consists of one statement that says to return the argument of the function (that is, number) multiplied by itself. The return statement specifies the value returned by the function.</p>
-      <code>return number * number;</code>
-      <p>Primitive parameters (such as a number) are passed to functions by value; the value is passed to the function, but if the function changes the value of the parameter, this change is not reflected globally or in the calling function.</p>
+    </section>
+
+    <section id="ARP_Attacks" class="main-section">
+      <header class="header">ARP Attacks</header>
+      <p>Recall that hosts broadcast ARP Requests to determine the MAC address of a host with a particular IPv4 address. This is typically done to discover the MAC address of the default gateway. All hosts on the subnet receive and process the ARP Request. The host with the matching IPv4 address in the ARP Request sends an ARP Reply.</p>
+      <p>According to the ARP RFC, a client is allowed to send an unsolicited ARP Request called a “gratuitous ARP.” When a host sends a gratuitous ARP, other hosts on the subnet store the MAC address and IPv4 address contained in the gratuitous ARP in their ARP tables.</p>
+      <p>The problem is that an attacker can send a gratuitous ARP message containing a spoofed MAC address to a switch, and the switch would update its MAC table accordingly. Therefore, any host can claim to be the owner of any IP and MAC address combination they choose. In a typical attack, a threat actor can send unsolicited ARP Replies to other hosts on the subnet with the MAC Address of the threat actor and the IPv4 address of the default gateway.</p>
+      <p>There are many tools available on the internet to create ARP man-in-the-middle attacks including dsniff, Cain & Abel, ettercap, Yersinia, and others. IPv6 uses ICMPv6 Neighbor Discovery Protocol for Layer 2 address resolution. IPv6 includes strategies to mitigate Neighbor Advertisement spoofing, similar to the way IPv6 prevents a spoofed ARP Reply.</p>
     </section>
   </main>
 </body>
